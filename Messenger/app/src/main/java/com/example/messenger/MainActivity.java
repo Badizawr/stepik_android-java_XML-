@@ -1,6 +1,10 @@
 package com.example.messenger;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +24,20 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        Button buttonSendMessage = findViewById(R.id.buttonSendMessage);
+        EditText editTextMessage = findViewById(R.id.editTextMessage);
+        buttonSendMessage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String message = editTextMessage.getText().toString();
+                launchNextScreen(message);
+            }
+        });
+    }
+
+    private void launchNextScreen(String message){
+        Intent intent = new Intent(this, ReceivedMessageActivity.class);
+        intent.putExtra("message", message);
+        startActivity(intent);
     }
 }
