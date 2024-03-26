@@ -2,4 +2,6 @@
     <string name="app_name">Game Score</string>
     <string name="team_1">Team 1</string>
     <string name="team_2">Team 2</string>
+    <string name="blue_0">0</string>
+    <string name="read_0">0</string>
 </resources>
