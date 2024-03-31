@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -26,6 +27,11 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        if (savedInstanceState != null) {
+            score1 = savedInstanceState.getInt("score1");
+            score2 = savedInstanceState.getInt("score2");
+        }
+
         TextView textViewTeam1Score = findViewById(R.id.textViewTeam1Score);
         TextView textViewTeam2Score = findViewById(R.id.textViewTeam2Score);
 
@@ -45,5 +51,12 @@ public class MainActivity extends AppCompatActivity {
                 textViewTeam2Score.setText(String.valueOf(++score2));
             }
         });
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("score1", score1);
+        outState.putInt("score2", score2);
     }
 }
