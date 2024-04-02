@@ -60,6 +60,30 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("MainActivity", "onStart called");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("MainActivity", "onResume called");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("MainActivity", "onPause called");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("MainActivity", "onStop called");
+    }
+
     private void updateScore1() {
         textViewTeam1Score.setText(String.valueOf(score1));
     }
