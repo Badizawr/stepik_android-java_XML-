@@ -9,13 +9,83 @@
 
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewGreetings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:text="@string/greetings"
         android:textAlignment="center"
-        android:textSize="24sp"
         android:textColor="@color/purple_500"
-        tools:layout_editor_absoluteX="160dp"
-        tools:layout_editor_absoluteY="10dp" />
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="160dp" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupDrink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/textViewGreetings">
+
+        <RadioButton
+            android:id="@+id/radioButtonTea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/tea"
+            android:textColor="@color/purple_500" />
+
+        <RadioButton
+            android:id="@+id/radioButtonCoffee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/coffee"
+            android:textColor="@color/purple_500" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textViewAdditives"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="@string/additives"
+        android:textAlignment="center"
+        android:textColor="@color/purple_500"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@id/radioGroupDrink"
+        tools:layout_editor_absoluteX="160dp" />
+
+    <CheckBox
+        android:id="@+id/checkBoxSugar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sugar"
+        app:layout_constraintEnd_toStartOf="@id/checkBoxMilk"
+        android:textColor="@color/purple_500"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewAdditives"/>
+
+    <CheckBox
+        android:id="@+id/checkBoxMilk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/milk"
+        app:layout_constraintEnd_toStartOf="@id/checkBoxLemon"
+        android:textColor="@color/purple_500"
+        app:layout_constraintStart_toEndOf="@id/checkBoxSugar"
+        app:layout_constraintTop_toBottomOf="@id/textViewAdditives"
+        />
+
+    <CheckBox
+        android:id="@+id/checkBoxLemon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lemon"
+        app:layout_constraintStart_toEndOf="@id/checkBoxMilk"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewAdditives"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,4 +6,10 @@
     <string name="sign_in_button">Войти</string>
     <string name="satan_coffee">Satan coffe</string>
     <string name="greetings">Привет, %s! Что желаете?</string>
+    <string name="tea">Чай</string>
+    <string name="coffee">Кофе</string>
+    <string name="additives">Что добавить в ваш %s?</string>
+    <string name="sugar">Сахар</string>
+    <string name="milk">Молоко</string>
+    <string name="lemon">Лимон</string>
 </resources>
