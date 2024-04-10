@@ -12,4 +12,21 @@
     <string name="sugar">Сахар</string>
     <string name="milk">Молоко</string>
     <string name="lemon">Лимон</string>
+    <string name="choose_drink_type">Выберите тип напитка</string>
+    <string name="make_order">СДЕЛАТЬ ЗАКАЗ</string>
+
+    <array name="types_of_tea">
+        <item>Зелёный</item>
+        <item>Чёрный</item>
+        <item>Улун</item>
+    </array>
+
+    <array name="types_of_coffee">
+        <item>Американо</item>
+        <item>Эспрессо</item>
+        <item>Латте</item>
+        <item>Капучино</item>
+        <item>Мокиатто</item>
+        <item>РАФ</item>
+    </array>
 </resources>
