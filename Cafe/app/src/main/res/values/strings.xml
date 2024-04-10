@@ -14,6 +14,10 @@
     <string name="lemon">Лимон</string>
     <string name="choose_drink_type">Выберите тип напитка</string>
     <string name="make_order">СДЕЛАТЬ ЗАКАЗ</string>
+    <string name="name">Имя:</string>
+    <string name="drink">Напиок:</string>
+    <string name="grink_type">Тип напитка:</string>
+    <string name="additives_label">Добавки:</string>
 
     <array name="types_of_tea">
         <item>Зелёный</item>
