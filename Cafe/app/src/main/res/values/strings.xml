@@ -18,6 +18,7 @@
     <string name="drink">Напиок:</string>
     <string name="grink_type">Тип напитка:</string>
     <string name="additives_label">Добавки:</string>
+    <string name="error_fields_empty">Пожалуйста, заполните все поля!</string>
 
     <array name="types_of_tea">
         <item>Зелёный</item>
