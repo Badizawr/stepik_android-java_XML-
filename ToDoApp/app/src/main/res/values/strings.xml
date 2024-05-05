@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ToDoApp_Java</string>
+    <string name="save_button">SAVE</string>
+    <string name="note_hint">Enter note:</string>
+    <string name="low_radio_button_text">Low</string>
+    <string name="medium_radio_button_text">Medium</string>
+    <string name="high_radio_button_text">High</string>
 </resources>

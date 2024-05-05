@@ -1,5 +1,6 @@
 package com.example.todoapp_java;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -42,6 +43,13 @@ public class MainActivity extends AppCompatActivity {
         }
         showNotes();
 
+        buttonAddNote.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = AddNoteActivity.newIntent(MainActivity.this);
+                startActivity(intent);
+            }
+        });
     }
 
     private void initViews() {
