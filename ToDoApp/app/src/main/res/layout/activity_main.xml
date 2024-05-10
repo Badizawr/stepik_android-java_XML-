@@ -6,10 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewNotes"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:layout_editor_absoluteX="-82dp"
+        tools:layout_editor_absoluteY="308dp"
+        tools:listitem="@layout/note_item" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/buttonAddNote"

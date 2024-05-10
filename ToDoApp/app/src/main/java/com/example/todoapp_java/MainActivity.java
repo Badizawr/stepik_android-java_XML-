@@ -12,6 +12,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -22,6 +23,7 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerViewNotes;
     private FloatingActionButton buttonAddNote;
+    private NotesAdapter notesAdapter;
 
     private Database database = Database.getInstance();
 
@@ -36,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         initViews();
+        notesAdapter =new NotesAdapter();
+        recyclerViewNotes.setAdapter(notesAdapter);
 
         buttonAddNote.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,34 +62,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showNotes() {
-        recyclerViewNotes.removeAllViews();
-        for (Note note : database.getNotes()) {
-            View view = getLayoutInflater().inflate(R.layout.note_item, recyclerViewNotes, false);
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    database.remove(note.getId());
-                    showNotes();
-                }
-            });
-            TextView textViewNote = view.findViewById(R.id.textViewNote);
-            textViewNote.setText(note.getText());
-            int colorResId;
-            switch ((note.getPriority())) {
-                case 0:
-                    colorResId = R.color.green;
-                    break;
-                case 1:
-                    colorResId = R.color.yellow;
-                    break;
-                default:
-                    colorResId = R.color.red;
-                    break;
-            }
-            int color = ContextCompat.getColor(this, colorResId);
-            textViewNote.setBackgroundColor(color);
-            recyclerViewNotes.addView(view);
-
-        }
+        notesAdapter.setNotes(database.getNotes());
     }
 }
